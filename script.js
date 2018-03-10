@@ -1,8 +1,8 @@
-//var res2=convertFromBytes(resultBytes,dataArr);
-//document.querySelector('#output').innerHTML = dataArr[0] + ' ' + dataArr[1]+ ' = ' + res2 +' '+ dataArr[3];
+// var res2=convertFromBytes(resultBytes,dataArr);
+// document.querySelector('#output').innerHTML = dataArr[0] + ' ' + dataArr[1]+ ' = ' + res2 +' '+ dataArr[3];
 
-//Declaring variables
-dataList = { 
+// Declaring variables
+dataList = {
      'B': 0,
     'KB': 1,
     'MB': 2,
@@ -12,24 +12,43 @@ dataList = {
 };
 var dataArr=[];
 var string = getJsonFromUrl();
-
 rawArr = string['convert'].split(/([^\"]\S*|\".+?\")\s*/);
-
 
 for (var i = 0; i < rawArr.length; i++) {
     if (isEmpty(rawArr[i])) {
-        console.log("Empty" + rawArr[i] );
+        // Do something
     } else {
-    console.log("Non-Empty" + rawArr[i] );
-    dataArr.push(rawArr[i]);
+        // Do something
+        dataArr.push(rawArr[i]);
     }
 }
 
-extractStringAndNumber(dataArr);
+extractStringAndNumber( dataArr );
 
 var bytes = getBytes(dataArr);
-var result = convertFromBytes( resultBytes, dataArr[dataArr.length -1]);
+var result = convertFromBytes( bytes, dataArr[dataArr.length -1]);
+
 alert("Conversion: " + result);
+
+// Now setting Data to input output
+document.querySelector('#output').innerHTML = dataArr[0] + ' ' + dataArr[1]+ ' = ' + result +' '+ dataArr[3];
+
+for ( str in dataList ) {
+    document.querySelector('#output' + dataList[str]).innerHTML = convertFromBytes( bytes, str );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Functions
 function getJsonFromUrl() {
@@ -49,7 +68,7 @@ function isEmpty(str) {
 function extractStringAndNumber(arr) {
     var str = arr[0];
     var sourceType;
-    var sourceDigit
+    var sourceDigit;
     if(str.match(/\D/)) {
         sourceType = str.substring( str.length - 2 ) || '';
         sourceType = sourceType.replace(/\d+/g,'') || '';
