@@ -1,5 +1,5 @@
-//var res2=convertFromBytes(resultBytes,newArr);
-//document.querySelector('#output').innerHTML = newArr[0] + ' ' + newArr[1]+ ' = ' + res2 +' '+ newArr[3];
+//var res2=convertFromBytes(resultBytes,dataArr);
+//document.querySelector('#output').innerHTML = dataArr[0] + ' ' + dataArr[1]+ ' = ' + res2 +' '+ dataArr[3];
 
 //Declaring variables
 dataList = { 
@@ -27,7 +27,7 @@ for (var i = 0; i < rawArr.length; i++) {
 
 extractStringAndNumber(dataArr);
 
-var bytes = getBytes(newArr);
+var bytes = getBytes(dataArr);
 var result = convertFromBytes( resultBytes, dataArr[dataArr.length -1]);
 alert("Conversion: " + result);
 
