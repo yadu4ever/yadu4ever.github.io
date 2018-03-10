@@ -10,7 +10,7 @@ dataList = {
     'TB': 4,
     'PB': 5
 };
-var dataArr;
+var dataArr=[];
 var string = getJsonFromUrl();
 
 rawArr = string['convert'].split(/([^\"]\S*|\".+?\")\s*/);
