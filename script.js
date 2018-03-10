@@ -28,7 +28,7 @@ extractStringAndNumber( dataArr );
 var bytes = getBytes(dataArr);
 var result = convertFromBytes( bytes, dataArr[dataArr.length -1]);
 
-alert("Conversion: " + result);
+//alert("Conversion: " + result);
 
 // Now setting Data to input output
 document.querySelector('#output').innerHTML = dataArr[0] + ' ' + dataArr[1]+ ' = ' + result +' '+ dataArr[3];
