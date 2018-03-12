@@ -4,15 +4,21 @@
 // Declaring variables
 dataList = {
      'B': 0,
+     'b': 0,
     'KB': 1,
+    'kb': 1,
     'MB': 2,
+    'mb': 2,
     'GB': 3,
+    'gb': 3,
     'TB': 4,
-    'PB': 5
+    'tb': 4,
+    'PB': 5,
+    'pb': 5
 };
 var dataArr=[];
 var string = getJsonFromUrl();
-rawArr = string['convert'].split(/([^\"]\S*|\".+?\")\s*/);
+rawArr = string['convert'].split(/[\s,+]/);
 
 for (var i = 0; i < rawArr.length; i++) {
     if (isEmpty(rawArr[i])) {
