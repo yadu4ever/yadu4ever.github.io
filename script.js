@@ -1,11 +1,8 @@
-// var res2=convertFromBytes(resultBytes,dataArr);
-// document.querySelector('#output').innerHTML = dataArr[0] + ' ' + dataArr[1]+ ' = ' + res2 +' '+ dataArr[3];
-
 // Declaring variables
 dataList = {
      'B': 0,
      'b': 0,
-    'KB': 1,
+     'KB': 1,
     'kb': 1,
     'MB': 2,
     'mb': 2,
@@ -16,47 +13,38 @@ dataList = {
     'PB': 5,
     'pb': 5
 };
-var dataArr=[];
-var string = getJsonFromUrl();
-rawArr = string['convert'].split(/[\s,+]/);
+dataArr=[];
+var string_from_url = getJsonFromUrl();
 
-for (var i = 0; i < rawArr.length; i++) {
-    if (isEmpty(rawArr[i])) {
-        // Do something
-    } else {
-        // Do something
-        dataArr.push(rawArr[i]);
+convertFromString(string_from_url.convert);
+
+// Functions
+function convertFromString(input_qry_str) {
+    dataArr=[];
+    if (typeof(input_qry_str) == "undefined" || input_qry_str == "" ) return;
+    var rawArr = input_qry_str.split(/[\s,+]/);
+
+    for (var i = 0; i < rawArr.length; i++) {
+        if (isEmpty(rawArr[i])) {
+            // Do something
+        } else {
+            // Do something
+            dataArr.push(rawArr[i]);
+        }
+    }
+
+    extractStringAndNumber( dataArr );
+
+    var bytes = getBytes(dataArr);
+    var result = convertFromBytes( bytes, dataArr[dataArr.length -1]);
+
+    // Now setting Data to input output
+    document.querySelector('#output').innerHTML = dataArr[0] + ' ' + dataArr[1]+ ' = ' + result +' '+ dataArr[3];
+    for ( var str in dataList ) {
+        document.querySelector('#output' + dataList[str]).innerHTML = convertFromBytes( bytes, str );
     }
 }
 
-extractStringAndNumber( dataArr );
-
-var bytes = getBytes(dataArr);
-var result = convertFromBytes( bytes, dataArr[dataArr.length -1]);
-
-//alert("Conversion: " + result);
-
-// Now setting Data to input output
-document.querySelector('#output').innerHTML = dataArr[0] + ' ' + dataArr[1]+ ' = ' + result +' '+ dataArr[3];
-
-for ( str in dataList ) {
-    document.querySelector('#output' + dataList[str]).innerHTML = convertFromBytes( bytes, str );
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Functions
 function getJsonFromUrl() {
     var query = location.search.substr(1);
     var result = {};

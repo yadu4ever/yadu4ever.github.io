@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Digital converter</title>
-  <head>
+<head>
+  <title>Digital converter</title>
   <style>
     h3{
         display:inline;
@@ -17,19 +16,26 @@
       text-align: right;
     }
   </style>
+<head>
 <body>
-  <h2>Data Conversion</h2>
-  <h1 id="input"></h1>
-  <h2 id="output"></h2>
-  <table>
-    <tr><th colspan="2"><h2 style="color: darkblue;">Conversion in other data types</h2></th></tr>
-    <tr><td><h3 id="output0"></h3></td><td><span>Bytes</span></td></tr>
-    <tr><td><h3 id="output1"></h3></td><td><span>KiloBytes</span></td></tr>
-    <tr><td><h3 id="output2"></h3></td><td><span>MegaBytes</span></td></tr>
-    <tr><td><h3 id="output3"></h3></td><td><span>GigaBytes</span></td></tr>
-    <tr><td><h3 id="output4"></h3></td><td><span>TeraBytes</span></td></tr>
-    <tr><td><h3 id="output5"></h3></td><td><span>PetaBytes</span></td></tr>
-  </table>
+  <div style="margin-left: 10px;">
+    <h2>Data Conversion</h2>
+    <input name="input_str" size="35" onchange="convertFromString(this.value);" placeholder="Type conversion query & hit enter" /> <button> Convert</button><br/>
+    <sup style="color:seagreen;">For eg.:  5gb in mb</sup>
+    <h1 id="input"></h1>
+    <h2 id="output"></h2>
+    <table>
+      <tr><th colspan="2"><h2 style="color: darkblue;">Conversion in other data types</h2></th></tr>
+      <tr><td><h3 id="output0"></h3></td><td><span>Bytes</span></td></tr>
+      <tr><td><h3 id="output1"></h3></td><td><span>KiloBytes</span></td></tr>
+      <tr><td><h3 id="output2"></h3></td><td><span>MegaBytes</span></td></tr>
+      <tr><td><h3 id="output3"></h3></td><td><span>GigaBytes</span></td></tr>
+      <tr><td><h3 id="output4"></h3></td><td><span>TeraBytes</span></td></tr>
+      <tr><td><h3 id="output5"></h3></td><td><span>PetaBytes</span></td></tr>
+    </table>
+    <br/><br/><br/>
+    <p>Note: All conversions are performed in Bytes only, no bit-to-Byte  or Byte-to-bit conversion.</p>
+  </div>
   <script src="script.js"></script>
 </body>
-</html> 
+</html>

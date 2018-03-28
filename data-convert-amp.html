@@ -1,0 +1,57 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <title>Hello, AMPs</title>
+  <link rel="canonical" href="https://yadu4ever.github.io/data-convert.html">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Conversion",
+      "headline": "Digital converter",
+      "datePublished": "2018-03-28T12:02:41Z",
+      "image": [
+        "logo.png"
+      ]
+    }
+  </script>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <style>
+      h3{
+          display:inline;
+      }
+      
+      span{
+          font-size: large;
+          color: green;
+      }
+      
+      tr td:first-child {
+        text-align: right;
+      }
+  </style>
+</head>
+<body>
+  <div style="margin-left: 10px;">
+    <h2>Data Conversion</h2>
+    <input name="input_str" size="35" onchange="convertFromString(this.value);" placeholder="Type conversion query & hit enter" /> <button> Convert</button><br/>
+    <sup style="color:seagreen;">For eg.:  5gb in mb</sup>
+    <h1 id="input"></h1>
+    <h2 id="output"></h2>
+    <table>
+      <tr><th colspan="2"><h2 style="color: darkblue;">Conversion in other data types</h2></th></tr>
+      <tr><td><h3 id="output0"></h3></td><td><span>Bytes</span></td></tr>
+      <tr><td><h3 id="output1"></h3></td><td><span>KiloBytes</span></td></tr>
+      <tr><td><h3 id="output2"></h3></td><td><span>MegaBytes</span></td></tr>
+      <tr><td><h3 id="output3"></h3></td><td><span>GigaBytes</span></td></tr>
+      <tr><td><h3 id="output4"></h3></td><td><span>TeraBytes</span></td></tr>
+      <tr><td><h3 id="output5"></h3></td><td><span>PetaBytes</span></td></tr>
+    </table>
+    <br/><br/><br/>
+    <p>Note: All conversions are performed in Bytes only, no bit-to-Byte  or Byte-to-bit conversion.</p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
