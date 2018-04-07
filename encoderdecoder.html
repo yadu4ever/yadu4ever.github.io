@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>URL Encoder Decoder</title>
+    <link rel="stylesheet" type="text/css" href="encoderdecoder.css">
+</head>
+<body>
+    <h2>URL Encoder Decoder</h2>
+    <div class="container" align="center">
+        <textarea type="text" class="ip1" value="Hello World" id="contentbox"></textarea>
+        <br/>
+        <div class="tooltip">
+            <button class="btn purple" id="encode" onclick="clickFun(this)" onmouseout="outFun(this)">
+                <span class="tooltiptext">Encode Content</span>
+                Encode
+            </button>
+        </div>
+        <div class="tooltip">
+            <button class="btn orange" id="decode" onclick="clickFun(this)">
+                <span class="tooltiptext">Decode content</span>
+                Decode
+            </button>
+        </div>
+        <!-- Currently pasting content from Clipboard is not accessible 
+        <div class="tooltip">
+            <button class="btn blue" id="paste" onclick="clickFun(this)" onmouseout="outFun(this)">
+                <span class="tooltiptext">Paste clipboard content into box</span>
+                Paste content
+            </button>
+        </div>
+        -->
+        <div class="tooltip">
+            <button class="btn green" id="copy" onclick="clickFun(this)" onmouseout="outFun(this)">
+                <span class="tooltiptext">Copy to clipboard</span>
+                Copy content
+            </button>
+        </div>
+        <div class="footer-notes">
+            <p>Encodes and decodes URL comonents</p>
+            <p>For digital data converter visit
+                <a href="/data-convert.html" class="link">Digital converter</a>
+            </p>
+        </div>
+
+    </div>
+    <script>
+        function clickFun(button) {
+            var contentBox = document.getElementById('contentbox');
+            switch (button.id) {
+                case "encode":
+                    var content = contentBox.value;
+                    contentBox.value = encodeURIComponent(content).replace(/'/g, "%27").replace(/"/g, "%22");
+                    document.querySelector("#" + button.id + " .tooltiptext").innerHTML = "Content Encoded";
+                    break;
+                case "decode":
+                    var content = contentBox.value;
+                    contentBox.value = decodeURIComponent(content.replace(/\+/g, " "));
+                    document.querySelector("#" + button.id + " .tooltiptext").innerHTML = "Content Decoded";
+                    break;
+                case "paste":
+                    ;
+                    break;
+                case "copy":
+                    contentBox.select();
+                    document.execCommand("Copy");
+                    document.querySelector("#" + button.id + " .tooltiptext").innerHTML = "Copied: " + contentBox.value;
+                    break;
+                default:
+                    alert("Kuch to error hai guru");
+            }
+        }
+
+        function outFun(button) {
+
+            var tooltipOutMsg = {
+                'encode': "Encode Content",
+                'decode': "Decode Content",
+                'paste': "Paste clipboard content into box",
+                'copy': "Copy to clipboard"
+            }
+
+            switch (button.id) {
+                case "encode":
+                    document.querySelector("#" + button.id + " .tooltiptext").innerHTML = tooltipOutMsg[button.id];
+                    break;
+                case "decode":
+                    document.querySelector("#" + button.id + " .tooltiptext").innerHTML = tooltipOutMsg[button.id];
+                    break;
+                case "paste":
+                    document.querySelector("#" + button.id + " .tooltiptext").innerHTML = tooltipOutMsg[button.id];
+                    break;
+                case "copy":
+                    document.querySelector("#" + button.id + " .tooltiptext").innerHTML = tooltipOutMsg[button.id];
+                    break;
+                default:
+                    alert("Kuch to error hai guru..");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
