@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>URL Encoder Decoder</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
     <link rel="stylesheet" type="text/css" href="encoderdecoder.css">
 </head>
+
 <body>
     <h2>URL Encoder Decoder</h2>
     <div class="container" align="center">
         <textarea type="text" class="ip1" value="Hello World" id="contentbox"></textarea>
         <br/>
-        <div class="tooltip">
-            <button class="btn purple" id="encode" onclick="clickFun(this)" onmouseout="outFun(this)">
-                <span class="tooltiptext">Encode Content</span>
-                Encode
-            </button>
-        </div>
-        <div class="tooltip">
-            <button class="btn orange" id="decode" onclick="clickFun(this)">
-                <span class="tooltiptext">Decode content</span>
-                Decode
-            </button>
-        </div>
-        <!-- Currently pasting content from Clipboard is not accessible 
-        <div class="tooltip">
-            <button class="btn blue" id="paste" onclick="clickFun(this)" onmouseout="outFun(this)">
-                <span class="tooltiptext">Paste clipboard content into box</span>
-                Paste content
-            </button>
-        </div>
-        -->
-        <div class="tooltip">
-            <button class="btn green" id="copy" onclick="clickFun(this)" onmouseout="outFun(this)">
-                <span class="tooltiptext">Copy to clipboard</span>
-                Copy content
-            </button>
-        </div>
+        <button class="bubbly-button bubbly-yellow" id="encode" onclick="clickFun(this)">Encode</button>
+        <button class="bubbly-button bubbly-blue" id="decode" onclick="clickFun(this)">Decode</button>
+        <button class="bubbly-button bubbly-green" id="copy" onclick="clickFun(this)">Copy to clipboard</button>
+        <script>
+            var animateButton = function (e) {
+                e.preventDefault;
+                //reset animation
+                e.target.classList.remove('animate');
+
+                e.target.classList.add('animate');
+                setTimeout(function () {
+                    e.target.classList.remove('animate');
+                }, 700);
+            };
+
+            var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+            for (var i = 0; i < bubblyButtons.length; i++) {
+                bubblyButtons[i].addEventListener('click', animateButton, false);
+            }
+        </script>
         <div class="footer-notes">
             <p>Encodes and decodes URL comonents</p>
             <p>For digital data converter visit
                 <a href="/data-convert.html" class="link">Digital converter</a>
             </p>
         </div>
-
     </div>
     <script>
         function clickFun(button) {
@@ -51,12 +49,10 @@
                 case "encode":
                     var content = contentBox.value;
                     contentBox.value = encodeURIComponent(content).replace(/'/g, "%27").replace(/"/g, "%22");
-                    document.querySelector("#" + button.id + " .tooltiptext").innerHTML = "Content Encoded";
                     break;
                 case "decode":
                     var content = contentBox.value;
                     contentBox.value = decodeURIComponent(content.replace(/\+/g, " "));
-                    document.querySelector("#" + button.id + " .tooltiptext").innerHTML = "Content Decoded";
                     break;
                 case "paste":
                     ;
@@ -64,37 +60,9 @@
                 case "copy":
                     contentBox.select();
                     document.execCommand("Copy");
-                    document.querySelector("#" + button.id + " .tooltiptext").innerHTML = "Copied: " + contentBox.value;
                     break;
                 default:
                     alert("Kuch to error hai guru");
-            }
-        }
-
-        function outFun(button) {
-
-            var tooltipOutMsg = {
-                'encode': "Encode Content",
-                'decode': "Decode Content",
-                'paste': "Paste clipboard content into box",
-                'copy': "Copy to clipboard"
-            }
-
-            switch (button.id) {
-                case "encode":
-                    document.querySelector("#" + button.id + " .tooltiptext").innerHTML = tooltipOutMsg[button.id];
-                    break;
-                case "decode":
-                    document.querySelector("#" + button.id + " .tooltiptext").innerHTML = tooltipOutMsg[button.id];
-                    break;
-                case "paste":
-                    document.querySelector("#" + button.id + " .tooltiptext").innerHTML = tooltipOutMsg[button.id];
-                    break;
-                case "copy":
-                    document.querySelector("#" + button.id + " .tooltiptext").innerHTML = tooltipOutMsg[button.id];
-                    break;
-                default:
-                    alert("Kuch to error hai guru..");
             }
         }
     </script>
