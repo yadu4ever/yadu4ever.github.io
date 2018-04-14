@@ -8,6 +8,10 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 Use  [digital data converter ](https://yadu4ever.github.io/data-convert.html) for all data convertions, use this for [mobile device](https://yadu4ever.github.io/data-convert-amp.html) .
 
+### Encoder Decoder
+
+Use [Encoder Decoder ](https://yadu4ever.github.io/encoder-decoder.html) .
+
 ```markdown
 Syntax highlighted code block
 
