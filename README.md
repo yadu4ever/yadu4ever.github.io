@@ -10,7 +10,7 @@ Use  [digital data converter ](https://yadu4ever.github.io/data-convert.html) fo
 
 ### Encoder Decoder
 
-Use [Encoder Decoder ](https://yadu4ever.github.io/encoder-decoder.html) .
+Use [Encoder Decoder ](https://yadu4ever.github.io/encoderdecoder.html) .
 
 ```markdown
 Syntax highlighted code block
