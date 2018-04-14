@@ -64,9 +64,8 @@ h2 {
     font-family: 'Helvetica', 'Arial', sans-serif;
     display: inline-block;
     font-size: 1em;
-    padding: 1.1em;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding: .75em 1.1em;
+    margin: 20px 5px;
     -webkit-appearance: none;
     appearance: none;
     background-color: #ff0081;
