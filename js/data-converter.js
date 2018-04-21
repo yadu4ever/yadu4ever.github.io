@@ -2,7 +2,7 @@
 dataList = {
     'B': 0,
     'b': 0,
-    'KB': 1,
+   'KB': 1,
    'kb': 1,
    'MB': 2,
    'mb': 2,
@@ -15,7 +15,7 @@ dataList = {
 };
 dataArr=[];
 var string_from_url = getJsonFromUrl();
-
+document.querySelector('input[name="input_str"]').value = string_from_url.convert;
 convertFromString(string_from_url.convert);
 
 // Functions
