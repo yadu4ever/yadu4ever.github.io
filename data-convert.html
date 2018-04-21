@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Digital converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+        crossorigin="anonymous">
+    <style>
+        .container {
+            max-width: 405px;
+            margin: auto;
+        }
+        h3 {
+            display: inline;
+        }
+
+        table tr td span {
+            color: green;
+            font-size: large;
+        }
+
+        table tr td:first-child {
+            text-align: right;
+        }
+    </style>        
+</head>
+<body>
+<div class="container">
+    <div class="pure-g-1-1">
+        <h2>Data Conversion</h2>
+    </div>
+    <form class="pure-form" onsubmit="convertFromString(this.input_str.value);return false;">
+        <input name="input_str" size="30" onchange="convertFromString(this.value);" placeholder="Type conversion query & hit enter" class="pure-input-rounded" />
+        <button class="pure-button pure-button-primary">Convert</button><br/>
+        <span style="color:saddlebrown; font-size: small;">For eg.:  5gb in mb</span>
+        <div class="pure-g-1-1"><h2 id="input"></h2></div>
+        <div class="pure-g-1-1"><h2 id="output"></h2></div>
+    </form>
+    <table class="pure-table">
+        <tr><th colspan="2"><h2 style="color: darkblue;">Conversion in other data types</h2></th></tr>
+        <tr><td><h3 id="output0"></h3></td><td><span>Bytes</span></td></tr>
+        <tr><td><h3 id="output1"></h3></td><td><span>KiloBytes</span></td></tr>
+        <tr><td><h3 id="output2"></h3></td><td><span>MegaBytes</span></td></tr>
+        <tr><td><h3 id="output3"></h3></td><td><span>GigaBytes</span></td></tr>
+        <tr><td><h3 id="output4"></h3></td><td><span>TeraBytes</span></td></tr>
+        <tr><td><h3 id="output5"></h3></td><td><span>PetaBytes</span></td></tr>
+    </table>
+    <p>Note: All conversions are performed in Bytes only, no bit-to-Byte  or Byte-to-bit conversion.</p>
+</div>
+<script src="/js/data-converter.js"></script>
+</body>
+</html>
