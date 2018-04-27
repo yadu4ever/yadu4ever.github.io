@@ -25,7 +25,7 @@
         table tr td:first-child {
             text-align: right;
         }
-        button {
+        .rounded-button {
             border-radius: 1em;
         }
     </style>        
@@ -37,7 +37,7 @@
     </div>
     <form class="pure-form" onsubmit="convertFromString(this.input_str.value);return false;">
         <input name="input_str" size="30" onchange="convertFromString(this.value);" placeholder="Type conversion query & hit enter" class="pure-input-rounded" />
-        <button class="pure-button pure-button-primary">Convert</button><br/>
+        <button class="pure-button pure-button-primary rounded-button">Convert</button><br/>
         <span style="color:saddlebrown; font-size: small;">For eg.:  5gb in mb</span>
         <div class="pure-g-1-1"><h2 id="input"></h2></div>
         <div class="pure-g-1-1"><h2 id="output"></h2></div>
