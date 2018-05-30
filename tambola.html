@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tambola | Number hunt game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css"/>
+    <style>
+        #game-table tr td {
+            min-width: 48px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-text-centered">Welcome to the Number hunt! game.</h1>
+            <p class="subtitle has-text-centered">
+                Create a table and fill the numbers provided in the game.
+                <br/> Then start entering announced numbers(comma separated) in given box
+                <br/> and press 'Enter' to check if they got matched.
+                <strong>Let's Go!</strong>
+            </p>
+            <br/>
+            <br/>
+
+            <div class="field">
+                <div class="field-body field is-grouped is-grouped-centered">
+                    <div class="field-label is-normal" style="flex-basis: unset; flex-grow: unset;">
+                        <label class="label">Select Rows</label>
+                    </div>
+                    <div class="field is-narrow">
+                        <p class="control has-icons-left">
+                            <span class="select">
+                                <select id="select-row">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                </select>
+                            </span>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-bars"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="field-label is-normal" style="flex-basis: unset; flex-grow: unset;">
+                        <label class="label">Select Columns</label>
+                    </div>
+                    <div class="field is-narrow">
+                        <p class="control has-icons-left">
+                            <span class="select">
+                                <select id="select-column">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="4">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                </select>
+                            </span>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-bars fa-rotate-90"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="field is-narrow">
+                        <a class="button is-primary has-background-info" id="generate">
+                            <span class="icon">
+                                <i class="fas fa-table"></i>
+                            </span>
+                            <span>Generate Table</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <br/>
+            <br/>
+
+            <div class="columns is-centered" style="margin-top:10px;">
+                <table id="game-table" class="table is-striped is-bordered" style="justify-self: center">
+                    <tr>
+                        <td colspan="3">
+                            <p>Please generate the game table!</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="columns is-centered" style="margin-top:10px;">
+                <div class="column is-6">
+                    <input type="text" class="input is-primary has-text-centered" id="numbers" placeholder="Enter comma seperated numbers here"
+                    />
+                </div>
+            </div>
+            <div class="columns is-centered" style="margin-top:10px;">
+                <ul id="result-display-box"></ul>
+            </div>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="js/tambola.js"></script>
+
+</body>
+
+</html>
