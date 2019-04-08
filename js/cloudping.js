@@ -171,7 +171,7 @@ $(
 
         function checkHealthStatus( region_id  ) {
             var id = $.uniqString() + $.regions[region_id][0]
-            var url = "http://ec2." + $.regions[region_id][0] + ".amazonaws.com/ping"//?random=" + id 
+            var url = "https://ec2." + $.regions[region_id][0] + ".amazonaws.com/ping"//?random=" + id 
             var xhttp = new XMLHttpRequest();
             var start_time = Date.now();
             xhttp.onreadystatechange = function() {
@@ -197,9 +197,9 @@ $(
         }
         $.pingItx = function(){
             Object.keys($.regions).forEach(function(region) {
-                var url = "http://ec2." + region + ".amazonaws.com/ping"
+                var url = "https://ec2." + region + ".amazonaws.com/ping"
                 //console.log($.continuePing + " ----- " + url)
-                var url = "http://ec2." + 'ap-south-1' + ".amazonaws.com/ping"
+                var url = "https://ec2." + 'ap-south-1' + ".amazonaws.com/ping"
                 var xhttp = new XMLHttpRequest();
                 var start_time = Date.now();
                 xhttp.onreadystatechange = function() {
@@ -235,7 +235,7 @@ $(
         $.changeIt = function() {
             Object.keys($.regions).forEach(function(region) {
                 var id = $.uniqString() + region
-                var url = "http://ec2." + region + ".amazonaws.com/ping?random=" + id
+                var url = "https://ec2." + region + ".amazonaws.com/ping?random=" + id
                 var start_time = Date.now()
                 $.get(url, function(){})
                 var time_taken = Date.now() - start_time;
@@ -250,7 +250,7 @@ $(
         $.changeIt1 = function() {
             Object.keys($.regions).forEach(function(region) {
                 var id = $.uniqString() + region
-                var url = "http://ec2." + region + ".amazonaws.com/ping?random=" + id 
+                var url = "https://ec2." + region + ".amazonaws.com/ping?random=" + id 
                 var html = '<img id="'+ id +'" style="display:none;" src="">'
                 $("#blankImages").append(html)
                 //var elem = document.getElementById(id)
