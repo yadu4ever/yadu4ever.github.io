@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/favicon-96x96.png" type="image/x-icon">
+    <title>Cloud Ping | Find nearest AWS server</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+    <style>
+        #game-table tr td {
+            min-width: 48px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-text-centered">Welcome to Cloud Ping service</h1>
+            <p class="subtitle has-text-centered">
+                Click on 'Ping Now' to start ping and collect stats.
+                <br/>Each time unit is in miliseconds.
+            </p>
+
+            <div id="ping" class="field">
+                <div class="field-body field is-grouped is-grouped-centered">
+                    <div class="field is-narrow">
+                        <a class="button is-primary has-background-success" id="pingnow">
+                            <span class="icon" >
+                                <i class="fas fa-table"></i>
+                            </span>
+                            <span class="button-label">Ping Now</span>
+                        </a>
+                        <span class="icon has-text-danger is-large ping-button-spinner" style="display:none">
+                            <i class="fas fa-2x fa-spinner fa-pulse"></i>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <p id="spinnerx" class="subtitle has-text-centered" style="display:none">
+            </p>
+
+            <div class="columns is-centered" style="margin-top:10px;">
+                <table id="ping-table" class="table is-striped is-bordered" style="justify-self: center">
+                    <tr>
+                        <td colspan="3">
+                            <p>Latency Data</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="/js/cloudping.js"></script>
+
+</body>
+
+</html>
