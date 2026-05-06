@@ -43,25 +43,24 @@ $(
                 3 :  [ "us-west-1", "US West (N. California)", [0, 0, 0], []],
                 4 :  [ "us-west-2", "US West (Oregon)", [0, 0, 0], []],
                 5 :  [ "ap-south-1", "Asia Pacific (Mumbai)", [0, 0, 0], []],
-                6 :  [ "ap-northeast-3", "Asia Pacific (Osaka-Local)", [0, 0, 0], []],
-                7 :  [ "ap-northeast-2", "Asia Pacific (Seoul)", [0, 0, 0], []],
-                8 :  [ "ap-southeast-1", "Asia Pacific (Singapore)", [0, 0, 0], []],
-                9 :  [ "ap-southeast-2", "Asia Pacific (Sydney)", [0, 0, 0], []],
-                10 : [ "ap-northeast-1", "Asia Pacific (Tokyo)", [0, 0, 0], []],
-                11 : [ "ca-central-1", "Canada (Central)", [0, 0, 0], []],
-                12 : [ "cn-north-1", "China (Beijing)", [0, 0, 0], []],
-                13 : [ "cn-northwest-1", "China (Ningxia)", [0, 0, 0], []],
-                14 : [ "eu-central-1", "EU (Frankfurt)", [0, 0, 0], []],
-                15 : [ "eu-west-1", "EU (Ireland)", [0, 0, 0], []],
-                16 : [ "eu-west-2", "EU (London)", [0, 0, 0], []],
-                17 : [ "eu-west-3", "EU (Paris)", [0, 0, 0], []],
-                18 : [ "eu-north-1", "EU (Stockholm)", [0, 0, 0], []],
-                19 : [ "sa-east-1", "South America (São Paulo)", [0, 0, 0], []],
-                20 : [ "us-gov-east-1", "AWS GovCloud (US-East)", [0, 0, 0], []],
-                21 : [ "us-gov-west-1", "AWS GovCloud (US)", [0, 0, 0], []],
+                6 :  [ "ap-south-2", "Asia Pacific (Hyderabad)", [0, 0, 0], []],
+                7 :  [ "ap-northeast-3", "Asia Pacific (Osaka-Local)", [0, 0, 0], []],
+                8 :  [ "ap-northeast-2", "Asia Pacific (Seoul)", [0, 0, 0], []],
+                9 :  [ "ap-southeast-1", "Asia Pacific (Singapore)", [0, 0, 0], []],
+                10 : [ "ap-southeast-2", "Asia Pacific (Sydney)", [0, 0, 0], []],
+                11 : [ "ap-northeast-1", "Asia Pacific (Tokyo)", [0, 0, 0], []],
+                12 : [ "ca-central-1", "Canada (Central)", [0, 0, 0], []],
+                13 : [ "eu-central-1", "EU (Frankfurt)", [0, 0, 0], []],
+                14 : [ "eu-west-1", "EU (Ireland)", [0, 0, 0], []],
+                15 : [ "eu-west-2", "EU (London)", [0, 0, 0], []],
+                16 : [ "eu-west-3", "EU (Paris)", [0, 0, 0], []],
+                17 : [ "eu-north-1", "EU (Stockholm)", [0, 0, 0], []],
+                18 : [ "sa-east-1", "South America (São Paulo)", [0, 0, 0], []],
+                19 : [ "us-gov-east-1", "AWS GovCloud (US-East)", [0, 0, 0], []],
+                20 : [ "us-gov-west-1", "AWS GovCloud (US)", [0, 0, 0], []],
         };
 
-        $.regions_list_count = 21;
+        $.regions_list_count = 20;
 
 
         // Initial Table building
